@@ -27,6 +27,10 @@ classifier.add(Conv2D(32, (3, 3), activation="relu", input_shape=(64, 64, 3)))
 # Step 2 - Pooling
 classifier.add(MaxPooling2D(pool_size = (2, 2)))
 
+# Adding a second convolutional layer
+classifier.add(Conv2D(32, (3, 3), activation="relu")) # didn't need the input shape when taking from another convolution layer
+classifier.add(MaxPooling2D(pool_size = (2, 2)))
+
 # Step 3 - Flattening
 classifier.add(Flatten())
 
