@@ -26,3 +26,11 @@ classifier.add(Conv2D(32, (3, 3), activation="relu", input_shape=(64, 64, 3)))
 
 # Step 2 - Pooling
 classifier.add(MaxPooling2D(pool_size = (2, 2)))
+
+# Step 3 - Flattening
+classifier.add(Flatten())
+
+# Step 4 - Full Connection 
+classifier.add(Dense(units = 128, activation = 'relu')) # hidden layer
+classifier.add(Dense(units = 1, activation = 'sigmoid')) # outpput layer
+
